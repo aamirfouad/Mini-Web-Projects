@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign-In & Sign-Up Form</title>
+    <link rel="stylesheet" href="Style.css" />
+    <script
+      src="https://kit.fontawesome.com/b4f5144c93.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon"  href="/logo.png">
+  </head>
+  <body>
+    <div class="Container">
+      <div class="Form-Box">
+        
+        <h1 id="Title">Sign Up</h1>
+
+        <form action="">
+          <div class="Input-Group">
+            
+            <div class="Input-Field" id="NameField">
+              <i class="fa-solid fa-user"></i>
+              <input type="text" placeholder="Name" />
+            </div>
+
+            <div class="Input-Field">
+              <i class="fa-solid fa-at"></i>
+              <input type="email" placeholder="Email" />
+            </div>
+
+            <div class="Input-Field">
+              <i class="fa-solid fa-lock"></i>
+              <input type="password" placeholder="Password" />
+            </div>
+            <p class="ForgetPassclass" id="ForgetPassId">Thanks 💜</p>
+          </div>
+          <div class="Btn-Field">
+            <button type="button" id="BtnSignUp">Sign Up</button>
+            <button type="button" id="BtnSIgnIn" class="Disable">
+              Sign In
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      let BtnSignUp = document.getElementById("BtnSignUp");
+      let BtnSIgnIn = document.getElementById("BtnSIgnIn");
+      let NameField = document.getElementById("NameField");
+      let ForgetPassId=document.getElementById("ForgetPassId");
+      let Title = document.getElementById("Title");
+
+
+      BtnSIgnIn.onclick = function(){
+        NameField.style.maxHeight="0";
+        Title.innerHTML="Sign In";
+        BtnSignUp.classList.add("Disable")
+        BtnSIgnIn.classList.remove("Disable")
+       ForgetPassId.innerHTML=`<p class="ForgetPassclass" id="ForgetPassId">Forget Password? <a href="#">Click Here!</a></p>`
+      }
+
+      BtnSignUp.onclick = function(){
+        NameField.style.maxHeight="60px";
+        Title.innerHTML="Sign Up";
+        BtnSignUp.classList.remove("Disable")
+        BtnSIgnIn.classList.add("Disable")
+        ForgetPassId.innerHTML=`Thanks 💜`
+      }
+
+    </script>
+  </body>
+</html>
